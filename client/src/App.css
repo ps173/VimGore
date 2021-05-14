@@ -117,6 +117,46 @@ p{
     border:2px solid #31CE56;
 }
 
+
+.label-opt{
+    color:#31CE56; 
+}
+
+.selector{
+    margin-top:3vh;
+    background:#343434; 
+}
+
+/* .css-yk16xz-control{ */
+/*   background-color:#343434 !important; */
+/*   color:#ccc !important; */
+/* } */
+
+/* .css-1pahdxg-control{ */
+/*   background-color:#343434 !important; */
+/*   color:#ccc !important; */
+/* } */
+
+/* .css-1pahdxg-control:hover{ */
+/*   background-color:#343434 !important; */
+/*   color:#ccc !important; */
+/* } */
+
+/* .css-1pahdxg-control:active{ */
+/*   background-color:#343434 !important; */
+/*   color:#fff !important; */
+/* } */
+
+/* .css-yk16xz-control:hover{ */
+/*   background-color:#343434 !important; */
+/*   color:#fff !important; */
+/* } */
+
+/* .css-yk16xz-control:active{ */
+/*   background-color:#343434 !important; */
+/*   color:#fff !important; */
+/* } */
+
 /* loaders */
 
 .lds-dual-ring {
