@@ -12,8 +12,8 @@
 
 ## How To Use
 
-You will see an editor and a snippet in it. There will be a task menu also where you can see the code   
-to write and also the minimum keystrokes required. If number of keystrokes is less than minimum keystrokes  
+You will see an editor and a snippet in it. There will be a task menu also where you can see the code
+to write and also the minimum keystrokes required. If number of keystrokes is less than minimum keystrokes
 then you are awarded 5 point other wise you are awarded 1 point only
 
 ## You may also like...
