@@ -65,7 +65,7 @@ function Editor(){
 
   // Incrementing the score
   useEffect(()=>{
-    if (checkAnswer == true && keyCounts <= snippets.minKeyCounts) {
+    if (keyCounts < snippets.minKeyCounts) {
         setScore(5)
         setGlobalScore(prev => prev + score)
     }
@@ -76,30 +76,25 @@ function Editor(){
 
   },[checkAnswer])
 
-  // Checking the input with keycounts
-  useEffect(()=>{
-    let codeVal = value
+  const handleKeypress = (e) => {
+    setKeyCounts(prev=>prev+1) 
+  }
+
+  const handleEditorInput = (e) => {
+    let codeVal = e.getValue()
+    setValue(codeVal)
     if ( codeVal.trim() == snippets.answer.trim()){
       setCheckAnswer(true)
     }
-    if ( codeVal.trim() !== snippets.answer.trim()){
+    else{
       setCheckAnswer(false)
     }
-
-  },[keyCounts])
-
-  const handleKeypress = (e) => {
-    let codeVal = e.getValue()
-    setValue(codeVal)
-    setKeyCounts(prev=>prev+1) 
   }
 
   const handleSelectChange = (e) => {
     setTheme(e.value)
   }
 
-const customStyles = {
-}
 
   const option = {
    theme: theme,
@@ -112,11 +107,9 @@ const customStyles = {
 
   return(
     <div className='editor'>
-      <label className='label-opt' for="colorscheme">Color-Scheme</label>
       <Select 
         id="colorscheme" 
         className="selector" 
-        style={customStyles}
         options={options} 
         onChange={(e)=>handleSelectChange(e)}
         theme={ theme => ({
@@ -142,6 +135,7 @@ const customStyles = {
        options={option}
        onKeyHandled={(e)=> handleMode(e)}
        onKeypress={(e)=> handleKeypress(e)}
+       onChange={(e)=> handleEditorInput(e)}
       />
       <pre className="command-bar">{vimmode}</pre>
       <div className="common-keys-bar" ref={notifRef}> 
