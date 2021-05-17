@@ -1,14 +1,39 @@
-# Vim Gore
+<h1 align="center">
+  <br>
+  Vim Gore
+  <br>
+</h1>
+
+<h4 align="center">An Interactive Game to learn Vim</h4>
+
+<h4 align="center"><a href="https://vimgore.netlify.app/">Play Here</a> </h4>
 
 ![UI of Vim Gore](./Screenshots/UI.png)
 
-An Interactive Game To Learn Vim Better
+## How To Use
 
-A task/code snippet is provided to the player and one should complete it in lowest   
-keystrokes possible
+You will see an editor and a snippet in it. There will be a task menu also where you can see the code   
+to write and also the minimum keystrokes required. If number of keystrokes is less than minimum keystrokes  
+then you are awarded 5 point other wise you are awarded 1 point only
 
-#### Features To Achieve
-----
+## You may also like...
+
+- [Vim](https://github.com/vim/vim) - Vim : a text editor 
+- [Vim Golf](http://www.vimgolf.com/) - A menubar/taskbar Gmail App for Windows and macOS
+
+## License
+
+MIT
+
+---
+
+> [personal site](https://ps173.github.io/portfolio-site/) 
+> GitHub [ps173](https://github.com/ps173) 
+> Twitter [@mehmehsloth](https://twitter.com/mehmehsloth)
+
+
+#### Features To Achieve / Todos 
+---- 
 
  - [x] UI and Functionality 
  - [x] Backend -> API
