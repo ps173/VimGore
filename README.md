@@ -27,9 +27,9 @@ MIT
 
 ---
 
-> [personal site](https://ps173.github.io/portfolio-site/) 
-> GitHub [ps173](https://github.com/ps173) 
-> Twitter [@mehmehsloth](https://twitter.com/mehmehsloth)
+> [personal site](https://ps173.github.io/portfolio-site/)    
+> GitHub [ps173](https://github.com/ps173)   
+> Twitter [@mehmehsloth](https://twitter.com/mehmehsloth)   
 
 
 #### Features To Achieve / Todos 
