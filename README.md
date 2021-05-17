@@ -19,7 +19,7 @@ then you are awarded 5 point other wise you are awarded 1 point only
 ## You may also like...
 
 - [Vim](https://github.com/vim/vim) - Vim : a text editor 
-- [Vim Golf](http://www.vimgolf.com/) - A menubar/taskbar Gmail App for Windows and macOS
+- [Vim Golf](http://www.vimgolf.com/) - A vim based game
 
 ## License
 
