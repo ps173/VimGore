@@ -46,3 +46,4 @@ MIT
  - [ ] Enabling Users to add Question
  - [x] Keybind Page
  - [x] Faq Page
+ - [] A better readme
