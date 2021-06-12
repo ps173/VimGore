@@ -1,0 +1,14 @@
+[
+  {
+    "code": "print('3')",
+    "answer": "print(3)",
+    "language": "python",
+    "minKeyStrokes": 5
+  },
+  {
+    "code": "console.log('5')",
+    "answer": "console.log(5)",
+    "language": "javascript",
+    "minKeyStrokes": 4
+  }
+]
