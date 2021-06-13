@@ -3,5 +3,5 @@ import React from "react";
 // import { Editor } from "../components";
 
 export default function GameArea() {
-  return <div></div>;
+  return <div> I am Game Area</div>;
 }

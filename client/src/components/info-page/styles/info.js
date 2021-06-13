@@ -16,6 +16,22 @@ export const Title = styled.h1`
   margin-bottom: 4vh;
 `;
 export const Subtitle = styled.h5``;
+
 export const Link = styled.a`
   color: orchid;
+`;
+
+export const Break = styled.hr`
+  height: 1px;
+  color: white;
+  margin: 5%;
+`;
+
+export const ListContainer = styled.ul`
+  margin-top: 2%;
+  margin-left: 5%;
+`;
+
+export const ListItem = styled.li`
+  color: #31ce56;
 `;
