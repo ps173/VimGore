@@ -18,15 +18,15 @@ body,html{
 }
 
 .CodeMirror-cursor{
-    background-color: #A5A4A480 !important;
-}
-
-.CodeMirror-cursors{
-    background-color: #A5A4A480 !important;
+border-left: 1px solid #ffcc66;
+background-color: #A5A4A480 !important;
 }
 
 .cm-animate-fat-cursor{
-    background-color: #A5A4A480 !important;
+background-color: #A5A4A480 !important;
 }
 
+
 `;
+
+    // background-color: #A5A4A480 !important;

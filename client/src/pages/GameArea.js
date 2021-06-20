@@ -1,21 +1,36 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import { GameArea } from "../components";
 import 'codemirror/keymap/vim'
-import 'codemirror/theme/ayu-mirage.css'
-import 'codemirror/theme/material-palenight.css'
-import * as Data from "../dummy_data.json"
+import 'codemirror/theme/material-palenight.css';
+import 'codemirror/theme/base16-light.css';
+import * as Snippet from "../dummy_data.json"
 
 
 export default function GameContainer() {
     // eslint-disable-next-line
     const [vimode, setVimode] = useState("Normal")
-    const [value, setValue] = useState(Data[0].code)
+    const [value, setValue] = useState(Snippet[0].code)
+    const [answer, setAnswer] = useReducer(Snippet[0].answer)
     const [keynum, setKeynum] = useState(0)
+    const [score, setScore] = useState(0)
+    const [correct, setCorrect] = useState(false)
+
+    function grabNextSnppet() {
+        setValue(Snippet[1].code)
+        setAnswer(Snippet[1].answer)
+    }
 
     function handleChange(e) {
-        console.log("logging")
-        setValue(e.getValue())
+        let currentVal = e.getValue()
+        setValue(currentVal)
 
+        // Check For Answer Here the answer will not update as the component will not re render
+        if (answer === currentVal) {
+            setCorrect(true)
+        }
+        else {
+            setCorrect(false)
+        }
     }
 
     function handleKeypress(e) {
@@ -35,8 +50,7 @@ export default function GameContainer() {
 
         // Update keypresses 
         setKeynum(prev => prev + 1)
-        // Check For Answer 
-        // Change score keypresses 
+        console.log("answer", answer)
 
     }
 
@@ -51,15 +65,26 @@ export default function GameContainer() {
     }
 
     useEffect(() => {
-        console.log("YO")
-    }, [])
+        if (correct === true) {
+            if (keynum <= Snippet[0].minKeyStrokes) {
+                setKeynum(0)
+                setScore(prev => prev + 1)
+                grabNextSnppet()
+            }
+            else {
+                setKeynum(0)
+                setScore(prev => prev + 0)
+                grabNextSnppet()
+            }
+        }
+    }, [correct])
 
     return (
         <>
             <GameArea.Container>
                 <GameArea.TextContainer>
                     <GameArea.Keynumber> Keys Pressed : {keynum} </GameArea.Keynumber>
-                    <GameArea.Score> score : 0 </GameArea.Score>
+                    <GameArea.Score> score : {score} </GameArea.Score>
                 </GameArea.TextContainer>
                 <GameArea.Editor
                     width="50vw"
@@ -73,5 +98,5 @@ export default function GameContainer() {
             </GameArea.Container>
         </>
     )
-        ;
 }
+
