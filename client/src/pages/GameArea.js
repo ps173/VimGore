@@ -1,21 +1,23 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useState, useEffect } from "react";
 import { GameArea } from "../components";
 import 'codemirror/keymap/vim'
 import 'codemirror/theme/material-palenight.css';
 import 'codemirror/theme/base16-light.css';
-import * as Snippet from "../dummy_data.json"
+import Snippet from "../dummy_data.json"
 
 
 export default function GameContainer() {
     // eslint-disable-next-line
     const [vimode, setVimode] = useState("Normal")
     const [value, setValue] = useState(Snippet[0].code)
-    const [answer, setAnswer] = useReducer(Snippet[0].answer)
+    const [answer, setAnswer] = useState(Snippet[0].answer)
     const [keynum, setKeynum] = useState(0)
     const [score, setScore] = useState(0)
     const [correct, setCorrect] = useState(false)
 
     function grabNextSnppet() {
+        console.log({ Snippet })
+        setCorrect(false)
         setValue(Snippet[1].code)
         setAnswer(Snippet[1].answer)
     }
@@ -23,6 +25,7 @@ export default function GameContainer() {
     function handleChange(e) {
         let currentVal = e.getValue()
         setValue(currentVal)
+        console.log(answer)
 
         // Check For Answer Here the answer will not update as the component will not re render
         if (answer === currentVal) {
@@ -50,8 +53,6 @@ export default function GameContainer() {
 
         // Update keypresses 
         setKeynum(prev => prev + 1)
-        console.log("answer", answer)
-
     }
 
     const option = {
@@ -65,17 +66,21 @@ export default function GameContainer() {
     }
 
     useEffect(() => {
+        console.log({ answer })
+    }, [answer])
+
+    useEffect(() => {
+        console.log("correct answe")
         if (correct === true) {
             if (keynum <= Snippet[0].minKeyStrokes) {
                 setKeynum(0)
                 setScore(prev => prev + 1)
-                grabNextSnppet()
             }
             else {
                 setKeynum(0)
                 setScore(prev => prev + 0)
-                grabNextSnppet()
             }
+            grabNextSnppet()
         }
     }, [correct])
 
@@ -99,4 +104,3 @@ export default function GameContainer() {
         </>
     )
 }
-
