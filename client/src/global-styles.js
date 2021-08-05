@@ -28,5 +28,3 @@ background-color: #A5A4A480 !important;
 
 
 `;
-
-    // background-color: #A5A4A480 !important;
