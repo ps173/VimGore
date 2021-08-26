@@ -8,7 +8,7 @@
 
 <h4 align="center"><a href="https://vimgore.netlify.app/">Play Here</a> </h4>
 
-![UI of Vim Gore](./Screenshots/UI.png)
+![UI of Vim Gore](./docs/UI.png)
 
 ## How To Use
 
