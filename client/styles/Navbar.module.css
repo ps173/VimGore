@@ -1,0 +1,24 @@
+.Container {
+  background-color: #3A3650;
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  padding-left: 3%;
+  height: 10vh;
+  width: 100vw;
+}
+
+.Title {
+ color : #C320CF;
+ font-size : 3em;
+}
+
+.Links {
+ color : #3ee;
+ padding-left: 15%;
+}
+
+.LinkContainer{
+ display : flex;
+ padding-right: 10%;
+}
