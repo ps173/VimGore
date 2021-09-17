@@ -10,11 +10,19 @@ export default function Info({ children, ...restprops }) {
  );
 }
 
-Info.Title = function InfoTitle({ ...restprops }) {
+Info.Container = function InfoContainer({ children, ...restprops }) {
  return (
-  <div className={InfoStyles.Title} {...restprops}>
-   VimGore
+  <div className={InfoStyles.Container} {...restprops}>
+   {children}
   </div>
+ );
+};
+
+Info.Title = function InfoTitle({ children, ...restprops }) {
+ return (
+  <h1 className={InfoStyles.Title} {...restprops}>
+   {children}
+  </h1>
  );
 };
 
@@ -23,6 +31,14 @@ Info.Text = function InfoText({ children, ...restprops }) {
   <div className={InfoStyles.TextContainer} {...restprops}>
    {children}
   </div>
+ );
+};
+
+Info.UL = function InfoUL({ children, ...restprops }) {
+ return (
+  <ul className={InfoStyles.Ul} {...restprops}>
+   {children}
+  </ul>
  );
 };
 
@@ -38,7 +54,7 @@ Info.LocalLinks = function InfoLocalLinks({ children, ...restprops }) {
 
 Info.GlobalLinks = function InfoGlobalLinks({ children, ...restprops }) {
  return (
-  <a className={InfoStyles.Links}>
+  <a className={InfoStyles.Links} target="_blank" {...restprops}>
    {children}
   </a>
  );

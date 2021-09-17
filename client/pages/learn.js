@@ -5,7 +5,7 @@ export default function Home() {
  return (
   <div className={styles.container}>
    <Navbar />
-   <h1>Home</h1>
+   <h1 className="bg-red-50">Learn</h1>
    <code>Some Code will be here</code>
   </div>
  );
