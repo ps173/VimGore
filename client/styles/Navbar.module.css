@@ -15,11 +15,6 @@
  font-weight: bold;
 }
 
-.Links {
- color : #3ee;
- padding-left: 15%;
-}
-
 .LinkContainer{
  display : flex;
  padding-right: 10%;

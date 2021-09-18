@@ -13,7 +13,9 @@ export default function Navbar({ children, ...restprops }) {
 Navbar.Title = function NavbarTitle({ ...restprops }) {
  return (
   <div className={NavStyles.Title} {...restprops}>
-   VimGore
+   <Link href="/">
+    VimGore
+   </Link>
   </div>
  );
 };
@@ -29,7 +31,7 @@ Navbar.LinkContainer = function NavbarContainer({ children, ...restprops }) {
 Navbar.Links = function NavbarLinks({ children, ...restprops }) {
  return (
   <Link {...restprops}>
-   <a className={NavStyles.Links}>
+   <a className="text-green-500 font-mono text-lg px-4">
     {children}
    </a>
   </Link>

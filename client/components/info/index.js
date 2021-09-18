@@ -1,10 +1,10 @@
 import "react";
-import InfoStyles from "../../styles/Infostyle.module.css";
+// import InfoStyles from "../../styles/Infostyle.module.css";
 import Link from "next/link";
 
 export default function Info({ children, ...restprops }) {
  return (
-  <div className={InfoStyles.Container} {...restprops}>
+  <div className="m-14" {...restprops}>
    {children}
   </div>
  );
@@ -12,7 +12,7 @@ export default function Info({ children, ...restprops }) {
 
 Info.Container = function InfoContainer({ children, ...restprops }) {
  return (
-  <div className={InfoStyles.Container} {...restprops}>
+  <div className="p-2 w-10/12" {...restprops}>
    {children}
   </div>
  );
@@ -20,7 +20,7 @@ Info.Container = function InfoContainer({ children, ...restprops }) {
 
 Info.Title = function InfoTitle({ children, ...restprops }) {
  return (
-  <h1 className={InfoStyles.Title} {...restprops}>
+  <h1 className="font-bold font-sans text-xl" {...restprops}>
    {children}
   </h1>
  );
@@ -28,7 +28,7 @@ Info.Title = function InfoTitle({ children, ...restprops }) {
 
 Info.Text = function InfoText({ children, ...restprops }) {
  return (
-  <div className={InfoStyles.TextContainer} {...restprops}>
+  <div className="font-sans font-normal w-full text-base" {...restprops}>
    {children}
   </div>
  );
@@ -36,7 +36,7 @@ Info.Text = function InfoText({ children, ...restprops }) {
 
 Info.UL = function InfoUL({ children, ...restprops }) {
  return (
-  <ul className={InfoStyles.Ul} {...restprops}>
+  <ul className="list-disc m-3" {...restprops}>
    {children}
   </ul>
  );
@@ -45,7 +45,7 @@ Info.UL = function InfoUL({ children, ...restprops }) {
 Info.LocalLinks = function InfoLocalLinks({ children, ...restprops }) {
  return (
   <Link {...restprops}>
-   <a className={InfoStyles.Links}>
+   <a className="link text-green-500">
     {children}
    </a>
   </Link>
@@ -54,7 +54,7 @@ Info.LocalLinks = function InfoLocalLinks({ children, ...restprops }) {
 
 Info.GlobalLinks = function InfoGlobalLinks({ children, ...restprops }) {
  return (
-  <a className={InfoStyles.Links} target="_blank" {...restprops}>
+  <a className="link text-green-500" target="_blank" {...restprops}>
    {children}
   </a>
  );
