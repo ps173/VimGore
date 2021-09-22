@@ -1,5 +1,6 @@
 import styles from "../styles/Home.module.css";
-import { About, Navbar } from "../containers";
+import { About } from "../containers";
+import { Navbar } from "../components";
 
 export default function Home() {
  return (
