@@ -1,5 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# Trust me you don't want to read these
+./BRAINSTORM.md
+
 # dependencies
 /node_modules
 /.pnp

@@ -1,38 +1,47 @@
-import dynamic from "next/dynamic";
+import React, { Component, useState } from "react";
+import { UnControlled as CodeMirror } from "react-codemirror2";
 import "codemirror/lib/codemirror.css";
+import "codemirror/theme/material.css";
+import "codemirror/theme/material-palenight.css";
+// ignore-eslint
+import "codemirror/keymap/vim";
+import "codemirror/mode/javascript/javascript";
 
-// Don't ask me why I am doing this
-// FIXME:: If anyone has better method of doing imports from codemirror
-const CodeMirror = dynamic(
- () => {
-  import("codemirror/mode/javascript/javascript");
-  import("codemirror/keymap/vim");
-  import("codemirror/theme/material-palenight.css");
-  return import("react-codemirror");
- },
- { ssr: false },
-);
+const VimEditor = () => {
+ const [vimode, setVimode] = useState("Normal");
+ const [value, _setValue] = useState("console.log('YAYAYA')");
 
-export const Editor = ({ doc, onChange, onCursorActivity }) => {
- const options = {
-  lineNumbers: true,
-  mode: "javascript",
-  keyMap: "vim",
-  theme: "material-palenight",
+ const handleVimode = (editor) => {
+  if (
+   editor.state.vim.insertMode === false &&
+   editor.state.vim.visualMode === false
+  ) {
+   setVimode("Normal");
+  } else if (
+   editor.state.vim.visualMode === true &&
+   editor.state.vim.insertMode === false
+  ) {
+   setVimode("Visual");
+  } else {
+   setVimode("Insert");
+  }
  };
 
  return (
-  CodeMirror &&
   <div>
    <CodeMirror
-    options={options}
-    value={doc}
-    onChange={onChange}
-    onCursorActivity={onCursorActivity}
-    className="m-4 rounded-xl p-1"
+    value={value}
+    options={{
+     theme: "material-palenight",
+     mode: "javascript",
+     lineNumbers: true,
+     keyMap: "vim",
+    }}
+    onKeyHandled={(editor, data, value) => handleVimode(editor)}
    />
+   <div>{vimode}</div>
   </div>
  );
 };
 
-export default Editor;
+export default VimEditor;

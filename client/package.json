@@ -3,24 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "codemirror": "^5.63.0",
+    "css-loader": "^6.3.0",
     "next": "^10.0.4",
+    "postcss": "^8.3.7",
     "react": "17.0.2",
-    "react-codemirror": "^1.0.0",
     "react-codemirror2": "^7.2.1",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "autoprefixer": "^10.3.4",
+    "autoprefixer": "^10.3.5",
     "eslint": "7.32.0",
     "eslint-config-next": "^0.2.4",
-    "postcss": "^8.3.6",
     "tailwindcss": "^2.2.15"
   }
 }
