@@ -8,7 +8,7 @@ import "codemirror/theme/material-palenight.css";
 import "codemirror/keymap/vim";
 import "codemirror/mode/javascript/javascript";
 
-const VimEditor = ({ value }) => {
+const VimEditor = ({ value, setValue, setKeystrokes }) => {
   const [vimode, setVimode] = useState("Normal");
   const [cursorpos, setCursorpos] = useState({ x: 0, y: 0 });
 
@@ -28,8 +28,8 @@ const VimEditor = ({ value }) => {
     }
   };
 
-  const handleCursorpos = () => {
-    // TODO: Add a cursor position handler
+  const handleKeyStrokes = () => {
+    setKeystrokes((prev) => prev + 1);
   };
 
   return (
@@ -38,12 +38,18 @@ const VimEditor = ({ value }) => {
         className="m-4"
         value={value}
         options={{
-          theme: "hopscotch",
+          theme: "material-palenight",
           mode: "javascript",
           lineNumbers: true,
           keyMap: "vim",
         }}
-        onKeyHandled={(editor, data, value) => handleVimode(editor)}
+        onChange={() => {
+          handleKeyStrokes();
+        }}
+        onKeyHandled={(editor, data, value) => {
+          handleVimode(editor);
+          handleKeyStrokes();
+        }}
       />
       <div className="m-4 flex flex-row w-auto bg-gray-600 p-2">
         <div className="text-indigo-500 ">{vimode}</div>
