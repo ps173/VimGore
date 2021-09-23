@@ -9,23 +9,25 @@ const GameArea = () => {
 
   return (
     <>
-      <VimEditor value={code} setKeystrokes={setKeystrokes} />
-      <GameAreaInfo>
-        <GameAreaInfo.FlexContainer>
-          <GameAreaInfo.Box>
-            <GameAreaInfo.Text>
-              change the above to text to snippet given below
-            </GameAreaInfo.Text>
-            <GameAreaInfo.Code>console.log("something here")</GameAreaInfo.Code>
-          </GameAreaInfo.Box>
-          <GameAreaInfo.Box>
-            <GameAreaInfo.HugeText>
-              KeyStrokes : {keystrokes}
-            </GameAreaInfo.HugeText>
-            <GameAreaInfo.HugeText>Global Score : 12</GameAreaInfo.HugeText>
-          </GameAreaInfo.Box>
-        </GameAreaInfo.FlexContainer>
-      </GameAreaInfo>
+      <VimEditor
+        value={code}
+        setKeystrokes={setKeystrokes}
+        keystrokes={keystrokes}
+      />
+      <GameAreaInfo.FlexContainer>
+        <GameAreaInfo.Box>
+          <GameAreaInfo.Text>
+            change the above to text to snippet given below
+          </GameAreaInfo.Text>
+          <GameAreaInfo.Code>console.log("something here")</GameAreaInfo.Code>
+        </GameAreaInfo.Box>
+        <GameAreaInfo.Box>
+          <GameAreaInfo.HugeText>
+            Keystrokes required to change : 3
+          </GameAreaInfo.HugeText>
+          <GameAreaInfo.HugeText>Global Score : 12</GameAreaInfo.HugeText>
+        </GameAreaInfo.Box>
+      </GameAreaInfo.FlexContainer>
     </>
   );
 };

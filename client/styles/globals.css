@@ -11,6 +11,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   box-sizing: border-box;
   overflow-x: hidden;
+  background-color: #1b1c1f;
 }
 
 a {
@@ -22,4 +23,8 @@ a {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+}
+
+.CodeMirror {
+  font-size: 1.4em !important;
 }

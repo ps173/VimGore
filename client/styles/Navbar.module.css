@@ -1,21 +1,22 @@
 .Container {
-  background-color: #3A3650;
+  background-color: #292d3e40;
+  backdrop-filter: blur(15px);
   display: flex;
-  justify-content:space-between;
-  align-items:center;
+  justify-content: space-between;
+  align-items: center;
   padding-left: 3%;
   height: 10vh;
   width: 100vw;
 }
 
 .Title {
- color : #C320CF;
- font-size : 3em;
- font-family: Courier;
- font-weight: bold;
+  color: #cd70e9;
+  font-size: 3em;
+  font-family: Courier;
+  font-weight: bold;
 }
 
-.LinkContainer{
- display : flex;
- padding-right: 10%;
+.LinkContainer {
+  display: flex;
+  padding-right: 10%;
 }

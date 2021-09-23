@@ -8,7 +8,7 @@ import "codemirror/theme/material-palenight.css";
 import "codemirror/keymap/vim";
 import "codemirror/mode/javascript/javascript";
 
-const VimEditor = ({ value, setValue, setKeystrokes }) => {
+const VimEditor = ({ value, setValue, setKeystrokes, keystrokes }) => {
   const [vimode, setVimode] = useState("Normal");
   const [cursorpos, setCursorpos] = useState({ x: 0, y: 0 });
 
@@ -35,7 +35,7 @@ const VimEditor = ({ value, setValue, setKeystrokes }) => {
   return (
     <div>
       <CodeMirror
-        className="m-4"
+        className="m-4 rounded-xl min-h-10 h-auto"
         value={value}
         options={{
           theme: "material-palenight",
@@ -51,8 +51,11 @@ const VimEditor = ({ value, setValue, setKeystrokes }) => {
           handleKeyStrokes();
         }}
       />
-      <div className="m-4 flex flex-row w-auto bg-gray-600 p-2">
-        <div className="text-indigo-500 ">{vimode}</div>
+      <div className="m-4 p-2 flex flex-row justify-around align-middle  bg-gradient-to-r from-gray-800 via-indigo-800 to-indigo-900  rounded-md">
+        <div className="text-xl px-5 font-bold text-red-500">{vimode}</div>
+        <div className="text-xl px-5 font-bold text-green-500">
+          Keystrokes : {keystrokes}
+        </div>
       </div>
     </div>
   );
