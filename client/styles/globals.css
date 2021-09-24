@@ -27,4 +27,5 @@ a {
 
 .CodeMirror {
   font-size: 1.4em !important;
+  height: 70vh !important;
 }

@@ -33,9 +33,9 @@ const VimEditor = ({ value, setValue, setKeystrokes, keystrokes }) => {
   };
 
   return (
-    <div>
+    <div className="col-span-2">
       <CodeMirror
-        className="m-4 rounded-xl min-h-10 h-auto"
+        className="m-4 rounded-xl"
         value={value}
         options={{
           theme: "material-palenight",

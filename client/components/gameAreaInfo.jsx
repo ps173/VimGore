@@ -2,17 +2,30 @@ const gameAreaInfo = ({ children }) => {
   return <div>{children}</div>;
 };
 
-gameAreaInfo.FlexContainer = ({ children }) => {
+gameAreaInfo.Grid = ({ children }) => {
+  return <div className="grid grid-cols-3 w-screen p-2">{children}</div>;
+};
+
+gameAreaInfo.Container = ({ children }) => {
+  // NOTE: 11/12 is approx 90% width which prevents the overflow
   return (
-    <div className="flex flex-row m-4 bg-gradient-to-br from-pink-800 via-indigo-800 to-purple-800 rounded-md">
+    <div className="grid col-span-1 grid-rows-3 w-11/12 rounded-md my-1">
       {children}
     </div>
   );
 };
 
-gameAreaInfo.Box = ({ children }) => {
+gameAreaInfo.Box = ({ children, flexgrow }) => {
   return (
-    <div className="bg-gray-800 w-full h-9/13 m-3 flex flex-col justify-center align-baseline rounded-md">
+    <div className="bg-gray-800 ring-4 ring-gray-600 w-full m-3 flex flex-col justify-center align-baseline rounded-md ">
+      {children}
+    </div>
+  );
+};
+
+gameAreaInfo.ScoreContainer = ({ children }) => {
+  return (
+    <div className="bg-gray-800 ring-4 ring-gray-600 row-span-2 w-full h-4/5 m-3 flex flex-col justify-center align-middle rounded-md">
       {children}
     </div>
   );
@@ -20,7 +33,7 @@ gameAreaInfo.Box = ({ children }) => {
 
 gameAreaInfo.Text = ({ children }) => {
   return (
-    <div className="text-justify text-blue-500 p-3 text-lg mx-4 my-1 w-7/12">
+    <div className="text-justify text-blue-500 p-3 text-lg mx-4 my-1 w-9/12">
       {children}
     </div>
   );
@@ -34,10 +47,8 @@ gameAreaInfo.Code = ({ children }) => {
   );
 };
 
-gameAreaInfo.HugeText = ({ children }) => {
-  return (
-    <div className="text-center text-2xl text-pink-500  p-4">{children}</div>
-  );
+gameAreaInfo.HugeScoreText = ({ children }) => {
+  return <div className="text-center text-2xl text-pink-500">{children}</div>;
 };
 
 export default gameAreaInfo;
