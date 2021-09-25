@@ -38,12 +38,7 @@ MIT
 - [x] UI and Functionality
 - [x] Backend -> API
 - [x] Backend -> react api integration
-- [ ] Providing View of all question
-- [ ] Mobile View
-  - [ ] Mobile Friendly View
-  - [ ] Some common keys as esc as button
-- [ ] Enabling User Authentiacation Via Github
-- [ ] Enabling Users to add Question
 - [x] Keybind Page
 - [x] Faq Page
-- [] A better readme
+- [ ] Better Learn page
+- [ ] Settings page to customize the app

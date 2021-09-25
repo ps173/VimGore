@@ -18,8 +18,14 @@ Info.FlexContainer = ({ children }) => {
   );
 };
 
+Info.MonoTitle = ({ children }) => {
+  return (
+    <h1 className="font-bold font-mono text-3xl text-pink-500">{children}</h1>
+  );
+};
+
 Info.Title = ({ children }) => {
-  return <h1 className="font-bold font-sans text-xl">{children}</h1>;
+  return <h1 className="font-bold font-sans text-3xl">{children}</h1>;
 };
 
 Info.Text = ({ children }) => {

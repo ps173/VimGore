@@ -3,6 +3,7 @@ import { UnControlled as CodeMirror } from "react-codemirror2";
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/hopscotch.css";
 import "codemirror/theme/material.css";
+import "codemirror/theme/gruvbox-dark.css";
 import "codemirror/theme/material-palenight.css";
 // ignore-eslint
 import "codemirror/keymap/vim";

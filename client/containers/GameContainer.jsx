@@ -8,7 +8,6 @@ const GameArea = () => {
   const [code, setCode] = useState(`console.log("somethinghere")`);
   const [keystrokes, setKeystrokes] = useState(0);
 
-  // TODO: Make layout column for the whole game area
   return (
     <>
       <GameAreaInfo.Grid>
