@@ -33,11 +33,11 @@ const SettingsContainer = () => {
 
  const handleClick = () => {
   setLineNumber((prev) => !prev);
+  notify("linenumber", !linenumber);
  };
 
  useEffect(() => {
   localStorage.setItem("linenumber", linenumber);
-  notify("linenumber", linenumber);
  }, [linenumber]);
 
  return (
