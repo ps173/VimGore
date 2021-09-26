@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { UnControlled as CodeMirror } from "react-codemirror2";
-import useGetTheme from "../hooks/useGetTheme";
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/hopscotch.css";
 import "codemirror/theme/material.css";
