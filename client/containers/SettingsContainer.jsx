@@ -1,39 +1,51 @@
 import settingsComponents from "../components/settingComponents";
 import Info from "../components/infoarea";
+import Select from "react-select";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SettingsContainer = () => {
-  const colorthemearray = [
-    "material",
-    "material-palenight",
-    "hopscotch",
-    "gruvbox-dark",
-  ];
+ const notify = (val) => toast(`Changed to ${val}`);
 
-  const uioptions = ["Minimal", "Normal", "Info"];
+ const colorthemearray = [
+  { value: "hopscotch", label: "hopscotch" },
+  { value: "material-palenight", label: "material-palenight" },
+  { value: "gruvbox-dark", label: "gruvbox-dark" },
+  { value: "material", label: "material" },
+  { value: "the-matrix", label: "the-matrix" },
+  { value: "dracula", label: "dracula" },
+  { value: "darcula", label: "darcula" },
+  { value: "solarized", label: "solarized" },
+ ];
 
-  return (
-    <div>
-      <settingsComponents.Container>
-        <Info.MonoTitle>Settings </Info.MonoTitle>
-        <settingsComponents.FlexContainer>
-          <Info.Text>Select the colorscheme for the editor : </Info.Text>
-          <settingsComponents.Select
-            array={colorthemearray}
-            selected={colorthemearray[1]}
-          />
-        </settingsComponents.FlexContainer>
-        <settingsComponents.FlexContainer>
-          <Info.Text>UI theme : </Info.Text>
-          <settingsComponents.Select
-            array={uioptions}
-            selected={colorthemearray[1]}
-          />
-        </settingsComponents.FlexContainer>
+ // TODO: Make a global handle function to store and set the values
+ const changeThemeHandler = (value) => {
+  // Saving to local storage
+  localStorage.setItem("default-theme", value);
+  notify(value);
+ };
 
-        <settingsComponents.SaveButton />
-      </settingsComponents.Container>
-    </div>
-  );
+ return (
+  <div>
+   <settingsComponents.Container>
+    <Info.MonoTitle>Settings</Info.MonoTitle>
+    <settingsComponents.FlexContainer>
+     <Info.Text>Select the colorscheme for the editor :</Info.Text>
+     <Select
+      name="colortheme-selection"
+      menuPlacement="auto"
+      menuPosition="fixed"
+      defaultValue={colorthemearray[1]}
+      options={colorthemearray}
+      onChange={({ value }) => changeThemeHandler(value)}
+     />
+    </settingsComponents.FlexContainer>
+   </settingsComponents.Container>
+   <ToastContainer
+    theme="dark"
+   />
+  </div>
+ );
 };
 
 export default SettingsContainer;
