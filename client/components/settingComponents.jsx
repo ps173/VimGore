@@ -10,17 +10,15 @@ settingsComponents.FlexContainer = ({ children }) => {
  return <div className="flex flex-row my-8">{children}</div>;
 };
 
-settingsComponents.SaveButton = ({ restprops }) => {
- return (
-  <div>
-   <button
-    className="bg-green-600 m-4 rounded-full text-white h-9 w-1/12 hover:bg-green-800"
-    {...restprops}
-   >
-    Save
-   </button>
-  </div>
- );
-};
+settingsComponents.Button = ({ text, onClick }) => (
+ <button
+  className={text
+   ? "p-4 w-1/6 bg-green-500 hover:bg-green-600 rounded-full"
+   : "p-4 w-1/6 bg-red-500 hover:bg-red-600 rounded-full"}
+  onClick={onClick}
+ >
+  {`${text}`}
+ </button>
+);
 
 export default settingsComponents;

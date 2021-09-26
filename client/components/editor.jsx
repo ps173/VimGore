@@ -16,8 +16,15 @@ import "codemirror/mode/javascript/javascript";
 
 const VimEditor = ({ value, setValue, setKeystrokes, keystrokes }) => {
  const [vimode, setVimode] = useState("Normal");
- // const [cursorpos, setCursorpos] = useState({ x: 0, y: 0 });
- const localtheme = useGetTheme();
+
+ const localtheme = localStorage.getItem("default-theme")
+  ? localStorage.getItem("default-theme")
+  : "material-palenight";
+
+  // Note: Parse is basically to convert the stupid string to bool
+ const localLineNumber = localStorage.getItem("linenumber")
+  ? JSON.parse(localStorage.getItem("linenumber"))
+  : false;
 
  const handleVimode = (editor) => {
   if (
@@ -42,7 +49,7 @@ const VimEditor = ({ value, setValue, setKeystrokes, keystrokes }) => {
  const option = {
   theme: localtheme, // retrieve from localStorage if the theme exists
   mode: "javascript",
-  lineNumbers: true,
+  lineNumbers:  localLineNumber,
   keyMap: "vim",
  };
 
