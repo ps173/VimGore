@@ -85,9 +85,11 @@ const VimEditor = (
     className="m-4 p-2 flex flex-row justify-around align-middle  bg-gradient-to-r from-gray-800 via-indigo-800 to-indigo-900  rounded-md"
    >
     <div className="text-xl px-5 font-bold text-red-500">{vimode}</div>
-    <div className="text-xl px-5 font-bold text-green-500">
-     Keystrokes : {keystrokes}
-    </div>
+    {keystrokes
+     ? <div className="text-xl px-5 font-bold text-green-500">
+      Keystrokes : {keystrokes}
+     </div>
+     : " "}
    </div>
   </div>
  );

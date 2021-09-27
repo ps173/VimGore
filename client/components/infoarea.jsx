@@ -30,9 +30,31 @@ Info.Title = ({ children }) => {
 
 Info.Text = ({ children }) => {
  return (
-  <div className="font-sans font-normal w-full text-base text-gray-100 ">
+  <div className="font-sans font-normal w-full text-lg text-gray-100 ">
    {children}
   </div>
+ );
+};
+
+Info.Header = ({ children }) => {
+ return (
+  <div className="text-justify p-4 text-xl text-green-400">
+   {children}
+  </div>
+ );
+};
+
+Info.Question = ({ children }) => {
+ return (
+  <div className="text-justify py-2 text-md text-blue-400">
+   {children}
+  </div>
+ );
+};
+
+Info.EmptyArea = () => {
+ return (
+  <div className="h-6 bg-transparent"></div>
  );
 };
 

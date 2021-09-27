@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { GameAreaInfo } from "../components";
 import dynamic from "next/dynamic";
 const VimEditor = dynamic(import("../components/editor"), { ssr: false });
+import _config_ from "../_config_";
 
-// TODO: Connecting to the backend
 const GameArea = () => {
  const [code, setCode] = useState(`console.log("somethinghere")`);
  const [answer, setAnswer] = useState(`console.log("something here")`);
@@ -11,8 +11,7 @@ const GameArea = () => {
  const [language, setLanguage] = useState("javascript");
  const [globalScore, setGlobalScore] = useState(0);
  const [reqkeystrokes, setReqKeystrokes] = useState(0);
- const APIPATH = process.env.REACT_APP_API_PATH ||
-  "http://localhost:5000/api/v1/random";
+ const APIPATH = _config_.API_PATH;
 
  const fetchData = () => {
   fetch(APIPATH)
@@ -37,9 +36,11 @@ const GameArea = () => {
   }
  }, [code]);
 
+ // FetchData for first time :)
  useEffect(() => {
   fetchData();
  }, []);
+
  return (
   <>
    <GameAreaInfo.Grid>
