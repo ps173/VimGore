@@ -24,4 +24,3 @@ then you are awarded 5 point other wise you are awarded 1 point only
 ## License
 
 MIT
-
