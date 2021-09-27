@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { UnControlled as CodeMirror } from "react-codemirror2";
 import "codemirror/lib/codemirror.css";
+// All the themes
 import "codemirror/theme/hopscotch.css";
 import "codemirror/theme/material.css";
 import "codemirror/theme/gruvbox-dark.css";
@@ -11,16 +12,25 @@ import "codemirror/theme/darcula.css";
 import "codemirror/theme/the-matrix.css";
 // ignore-eslint
 import "codemirror/keymap/vim";
+// All the languages
 import "codemirror/mode/javascript/javascript";
+import "codemirror/mode/python/python";
+import "codemirror/mode/css/css";
+import "codemirror/mode/rust/rust";
+import "codemirror/mode/go/go";
+import "codemirror/mode/clojure/clojure";
+import "codemirror/mode/markdown/markdown";
 
-const VimEditor = ({ value, setValue, setKeystrokes, keystrokes }) => {
+const VimEditor = (
+ { value, setValue, setKeystrokes, keystrokes, language },
+) => {
  const [vimode, setVimode] = useState("Normal");
 
  const localtheme = localStorage.getItem("default-theme")
   ? localStorage.getItem("default-theme")
   : "material-palenight";
 
-  // Note: Parse is basically to convert the stupid string to bool
+ // Note: Parse is basically to convert the stupid string to bool
  const localLineNumber = localStorage.getItem("linenumber")
   ? JSON.parse(localStorage.getItem("linenumber"))
   : false;
@@ -45,10 +55,14 @@ const VimEditor = ({ value, setValue, setKeystrokes, keystrokes }) => {
   setKeystrokes((prev) => prev + 1);
  };
 
+ const handleValue = (value) => {
+  setValue(value);
+ };
+
  const option = {
   theme: localtheme, // retrieve from localStorage if the theme exists
-  mode: "javascript",
-  lineNumbers:  localLineNumber,
+  mode: language,
+  lineNumbers: localLineNumber,
   keyMap: "vim",
  };
 
@@ -58,8 +72,9 @@ const VimEditor = ({ value, setValue, setKeystrokes, keystrokes }) => {
     className="m-4 rounded-xl"
     value={value}
     options={option}
-    onChange={() => {
+    onChange={(_editor, _data, value) => {
      handleKeyStrokes();
+     handleValue(value);
     }}
     onKeyHandled={(editor, data, value) => {
      handleVimode(editor);

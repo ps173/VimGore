@@ -38,6 +38,6 @@ All the snippets look like this
  "code":" some code here",
  "answer": " answer for the code",
  "minKeyStrokes" : "minimum key strokes required to complete",
- "language": "language of the snippet (possible values : python | js | rust | c)"
+ "language": "language of the snippet (possible values : python | javascript | rust | clojure| golang| css)"
 }
 ```
