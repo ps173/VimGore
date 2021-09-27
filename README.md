@@ -25,20 +25,3 @@ then you are awarded 5 point other wise you are awarded 1 point only
 
 MIT
 
----
-
-- [personal site](https://ps173.github.io/portfolio-site/)
-- GitHub [ps173](https://github.com/ps173)
-- Twitter [@mehmehsloth](https://twitter.com/mehmehsloth)
-
-#### Features To Achieve / Todos
-
----
-
-- [x] UI and Functionality
-- [x] Backend -> API
-- [x] Backend -> react api integration
-- [x] Keybind Page
-- [x] Faq Page
-- [ ] Better Learn page
-- [ ] Settings page to customize the app
