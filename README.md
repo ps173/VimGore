@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/941c0169-f0e4-4e3a-a6c8-7a85e4f52c9d/deploy-status)](https://app.netlify.com/sites/vimgore/deploys)
+
 <h1 align="center">
   <br>
   Vim Gore
