@@ -22,7 +22,7 @@ import "codemirror/mode/clojure/clojure";
 import "codemirror/mode/markdown/markdown";
 
 const VimEditor = (
- { value, setValue, setKeystrokes, keystrokes, language },
+ { setKeystrokes, keystrokes, language, ...restProps },
 ) => {
  const [vimode, setVimode] = useState("Normal");
 
@@ -55,10 +55,6 @@ const VimEditor = (
   setKeystrokes((prev) => prev + 1);
  };
 
- const handleValue = (value) => {
-  setValue(value);
- };
-
  const option = {
   theme: localtheme, // retrieve from localStorage if the theme exists
   mode: language,
@@ -69,14 +65,10 @@ const VimEditor = (
  return (
   <div className="col-span-2">
    <CodeMirror
+    {...restProps}
     className="m-4 rounded-xl"
-    value={value}
     options={option}
-    onChange={(_editor, _data, value) => {
-     handleKeyStrokes();
-     handleValue(value);
-    }}
-    onKeyHandled={(editor, data, value) => {
+    onKeyHandled={(editor, _data, _value) => {
      handleVimode(editor);
      handleKeyStrokes();
     }}

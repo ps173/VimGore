@@ -24,17 +24,21 @@ const GameArea = () => {
    });
  };
 
- useEffect(() => {
-  if (code == answer) {
+ // NOTE: Somehow this fixes everything
+ const handleChange = (_e, _d, val) => {
+  if (val.trim() == answer.trim()) {
    if (keystrokes <= reqkeystrokes) {
     setGlobalScore((prev) => prev + 5);
    } else {
     setGlobalScore((prev) => prev + 1);
    }
    setKeystrokes(0);
-   fetchData();
   }
- }, [code]);
+ };
+
+ useEffect(() => {
+  fetchData();
+ }, [globalScore]);
 
  // FetchData for first time :)
  useEffect(() => {
@@ -46,7 +50,8 @@ const GameArea = () => {
    <GameAreaInfo.Grid>
     <VimEditor
      value={code}
-     setValue={setCode}
+     // don't do this
+     onChange={handleChange}
      setKeystrokes={setKeystrokes}
      keystrokes={keystrokes}
      language={language}
