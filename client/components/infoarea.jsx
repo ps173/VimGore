@@ -2,17 +2,21 @@ import "react";
 import Link from "next/link";
 
 export default function Info({ children }) {
- return <div className="m-14">{children}</div>;
+ return <div className="m-8">{children}</div>;
 }
 
 Info.Container = ({ children }) => {
- return <div className="p-2 w-10/12">{children}</div>;
+ return <div className="p-2">
+  {children}
+ </div>;
 };
 
 Info.FlexContainer = ({ children }) => {
  // Add the children that Are themselves Container
  return (
-  <div className="flex flex-row bg-gray-800 h-auto p-5 m-4 w-auto rounded-lg">
+  <div
+   className="flex flex-row bg-gray-800 h-auto p-5 rounded-lg"
+  >
    {children}
   </div>
  );
@@ -20,17 +24,25 @@ Info.FlexContainer = ({ children }) => {
 
 Info.MonoTitle = ({ children }) => {
  return (
-  <h1 className="font-bold font-mono text-3xl text-pink-500">{children}</h1>
+  <h1
+   className="font-bold font-mono text-3xl text-pink-500"
+  >
+   {children}
+  </h1>
  );
 };
 
 Info.Title = ({ children }) => {
- return <h1 className="font-bold font-sans text-3xl">{children}</h1>;
+ return <h1 className="font-bold font-sans text-3xl ">
+  {children}
+ </h1>;
 };
 
 Info.Text = ({ children }) => {
  return (
-  <div className="font-sans font-normal w-full text-lg text-gray-100 ">
+  <div
+   className="font-sans font-normal w-full text-lg "
+  >
    {children}
   </div>
  );
@@ -38,7 +50,7 @@ Info.Text = ({ children }) => {
 
 Info.Header = ({ children }) => {
  return (
-  <div className="text-justify p-4 text-xl text-green-400">
+  <div className="text-justify p-4 text-green-400">
    {children}
   </div>
  );
@@ -46,7 +58,7 @@ Info.Header = ({ children }) => {
 
 Info.Question = ({ children }) => {
  return (
-  <div className="text-justify py-2 text-md text-blue-400">
+  <div className="text-justify py-2 text-blue-400">
    {children}
   </div>
  );

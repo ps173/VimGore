@@ -59,6 +59,7 @@ const VimEditor = (
   theme: localtheme, // retrieve from localStorage if the theme exists
   mode: language,
   lineNumbers: localLineNumber,
+  lineWrapping: false,
   keyMap: "vim",
  };
 
