@@ -12,20 +12,37 @@ export default function AboutContainer() {
 
      Here Are Some Faqs:
 
-     <Info.Question>What does vimgore means ?</Info.Question>
+     <Info.Header>What does vimgore means ?</Info.Header>
      I dunno I was searching for a cool name. Vimgore goes good in my
-     opinion of coolness so I don't mind
-     <Info.Question>What editor does this site use ?</Info.Question>
+     opinion of coolness.
+     <Info.Header>What editor does this site use ?</Info.Header>
      The Editor is your beloved{" "}
      <Info.GlobalLinks href="https://codemirror.net/">
       CodeMirror
      </Info.GlobalLinks>
-
-     <Info.Question>Is this on github ?</Info.Question>
+     I tried other editors like
+     <Info.GlobalLinks href="https://ace.c9.io/">
+      Ace
+     </Info.GlobalLinks>{" "}
+     and
+     <Info.GlobalLinks href="https://microsoft.github.io/monaco-editor/">
+      Monaco
+     </Info.GlobalLinks>{" "}
+     and both had vim mode but was not better in comparison to codemirror.
+     Also at the moment I use codemirror5 which is the version that
+     supports vim-mode. Codemirror-next does not support vim mode yet! For
+     more info check
+     <Info.GlobalLinks
+      href="https://github.com/codemirror/codemirror.next/issues/79"
+     >
+      this
+     </Info.GlobalLinks>.
+     <Info.Header>Is this on github ?</Info.Header>
      Of Course. Vimgore is totally open source. Check it out
      <Info.GlobalLinks href="https://github.com/ps173/vimgore">
-      here.
-     </Info.GlobalLinks>
+      here
+     </Info.GlobalLinks>. And if you like it show your support by just
+     clicking that start button
     </Info.Text>
    </Info.Container>
    <Info.EmptyArea />
@@ -34,8 +51,7 @@ export default function AboutContainer() {
    <Info.Container>
     <Info.EmptyArea />
     <Info.Text>
-     Yea That's All For Faqs. If you like the project support by giving it
-     a star on github. You can contact me via{" "}
+     Yea That's All For Faqs. You can contact me via{" "}
      <Info.UL>
       <li>
        <Info.GlobalLinks>mail</Info.GlobalLinks>

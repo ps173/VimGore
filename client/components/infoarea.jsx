@@ -33,7 +33,7 @@ Info.MonoTitle = ({ children }) => {
 };
 
 Info.Title = ({ children }) => {
- return <h1 className="font-bold font-sans text-3xl ">
+ return <h1 className="font-bold font-sans text-3xl text-purple-600 ">
   {children}
  </h1>;
 };
@@ -41,7 +41,7 @@ Info.Title = ({ children }) => {
 Info.Text = ({ children }) => {
  return (
   <div
-   className="font-sans font-normal w-full text-lg "
+   className="font-sans font-normal text-purple-300 w-full text-lg "
   >
    {children}
   </div>

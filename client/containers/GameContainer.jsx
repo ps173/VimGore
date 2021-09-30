@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { GameAreaInfo } from "../components";
 import dynamic from "next/dynamic";
 const VimEditor = dynamic(import("../components/editor"), { ssr: false });
+const DisplayEditor = dynamic(import("../components/display-editor"), {
+ ssr: false,
+});
 import _config_ from "../_config_";
 
 const GameArea = () => {
@@ -36,11 +39,12 @@ const GameArea = () => {
   }
  };
 
+ // Change Question Everytime You have a correct answer
  useEffect(() => {
   fetchData();
  }, [globalScore]);
 
- // FetchData for first time :)
+ // FetchData for first time
  useEffect(() => {
   fetchData();
  }, []);
@@ -50,18 +54,21 @@ const GameArea = () => {
    <GameAreaInfo.Grid>
     <VimEditor
      value={code}
-     // don't do this
      onChange={handleChange}
      setKeystrokes={setKeystrokes}
      keystrokes={keystrokes}
      language={language}
     />
     <GameAreaInfo.Container>
-     <GameAreaInfo.Box flexgrow="flex-none">
+     <GameAreaInfo.Box>
       <GameAreaInfo.Text>
        change the above to text to snippet given below
       </GameAreaInfo.Text>
-      <GameAreaInfo.Code>{answer}</GameAreaInfo.Code>
+      <DisplayEditor
+       className="code-display"
+       value={answer}
+       language={language}
+      />
      </GameAreaInfo.Box>
      <GameAreaInfo.ScoreContainer>
       <GameAreaInfo.HugeScoreText>
