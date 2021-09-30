@@ -16,6 +16,10 @@ You will see an editor and a snippet in it. There will be a task menu also where
 to write and also the minimum keystrokes required. If number of keystrokes is less than minimum keystrokes
 then you are awarded 5 point other wise you are awarded 1 point only
 
+## Check the docs on 
+- [Setting up locally](https://github.com/ps173/VimGore/blob/master/docs/Setting_Up.md)
+- [Routes for the server](https://github.com/ps173/VimGore/blob/master/docs/Backend_Info.md)
+
 ## You may also like...
 
 - [Vim](https://github.com/vim/vim) - Vim : a text editor
