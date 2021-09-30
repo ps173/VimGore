@@ -31,7 +31,7 @@ gameAreaInfo.Box = ({ children }) => {
 gameAreaInfo.ScoreContainer = ({ children }) => {
  return (
   <div
-   className="bg-gray-800 ring-4 ring-gray-600 row-span-2 w-full h-4/5 m-3 flex flex-col justify-center align-middle rounded-md"
+   className="bg-gray-800 ring-4 ring-gray-600 row-span-2 w-full h-4/6 m-3 flex flex-col justify-center align-middle rounded-md"
   >
    {children}
   </div>

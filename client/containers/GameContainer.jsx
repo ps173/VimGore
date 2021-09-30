@@ -5,6 +5,14 @@ const VimEditor = dynamic(import("../components/editor"), { ssr: false });
 const DisplayEditor = dynamic(import("../components/display-editor"), {
  ssr: false,
 });
+import {
+ RedditIcon,
+ RedditShareButton,
+ TelegramIcon,
+ TelegramShareButton,
+ TwitterIcon,
+ TwitterShareButton,
+} from "react-share";
 import _config_ from "../_config_";
 
 const GameArea = () => {
@@ -15,6 +23,8 @@ const GameArea = () => {
  const [globalScore, setGlobalScore] = useState(0);
  const [reqkeystrokes, setReqKeystrokes] = useState(0);
  const APIPATH = _config_.API_PATH;
+ const ScoreShareString =
+  `Here Checkout Vimgore and score your vim efficency. My score was ${globalScore}`;
 
  const fetchData = () => {
   fetch(APIPATH)
@@ -78,6 +88,27 @@ const GameArea = () => {
        Global Score : {globalScore}
       </GameAreaInfo.HugeScoreText>
      </GameAreaInfo.ScoreContainer>
+     <div className="flex flex-row justify-around">
+      <div className="text-lg px-3 text-purple-100">Share Score :</div>
+      <RedditShareButton
+       url="https://vimgore.netlify.app"
+       title={ScoreShareString}
+      >
+       <RedditIcon className="rounded-full mx-1 w-10 h-10" />
+      </RedditShareButton>
+      <TwitterShareButton
+       url="https://vimgore.netlify.app"
+       title={ScoreShareString}
+      >
+       <TwitterIcon className="rounded-full mx-1 w-10 h-10" />
+      </TwitterShareButton>
+      <TelegramShareButton
+       url="https://vimgore.netlify.app"
+       title={ScoreShareString}
+      >
+       <TelegramIcon className="rounded-full mx-1 w-10 h-10" />
+      </TelegramShareButton>
+     </div>
     </GameAreaInfo.Container>
    </GameAreaInfo.Grid>
   </>
