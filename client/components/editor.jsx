@@ -39,6 +39,7 @@ const VimEditor = (
   lineNumbers: localLineNumber,
   lineWrapping: false,
   keyMap: "vim",
+  autofocus: true,
  };
 
  return (
