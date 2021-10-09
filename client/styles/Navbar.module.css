@@ -9,6 +9,13 @@
   width: 100vw;
 }
 
+@media only screen and (max-width: 680px) {
+ .Container {
+  height: 6vh;
+ }
+}
+
+
 .Title {
   color: #cd70e9;
   font-size: 3em;

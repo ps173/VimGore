@@ -3,7 +3,9 @@ const gameAreaInfo = ({ children }) => {
 };
 
 gameAreaInfo.Grid = ({ children }) => {
- return <div className="grid grid-cols-3 w-screen p-2 h-full">
+ return <div
+  className="grid lg:grid-cols-3 w-screen p-2 h-full"
+ >
   {children}
  </div>;
 };

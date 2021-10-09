@@ -12,10 +12,10 @@ export default function AboutContainer() {
 
      Here Are Some Faqs:
 
-     <Info.Header>What does vimgore means ?</Info.Header>
+     <Info.Question>What does vimgore means ?</Info.Question>
      I dunno I was searching for a cool name. Vimgore goes good in my
      opinion of coolness.
-     <Info.Header>What editor does this site use ?</Info.Header>
+     <Info.Question>What editor does this site use ?</Info.Question>
      The Editor is your beloved{" "}
      <Info.GlobalLinks href="https://codemirror.net/">
       CodeMirror
@@ -37,7 +37,7 @@ export default function AboutContainer() {
      >
       this
      </Info.GlobalLinks>.
-     <Info.Header>Is this on github ?</Info.Header>
+     <Info.Question>Is this on github ?</Info.Question>
      Of Course. Vimgore is totally open source. Check it out
      <Info.GlobalLinks href="https://github.com/ps173/vimgore">
       here

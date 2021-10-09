@@ -8,13 +8,13 @@ export default function LearnContainer() {
    <Info.Container>
     <Info.Text>
      Learning Vim is not that hard. Community is here to help you.
-     <Info.Header>So what is vim ?</Info.Header>
+     <Info.Question>So what is vim ?</Info.Question>
      Think of vim as a skill to help you with coding faster Even if you are
      fast enough now and don't think that you want to try it I would still
      recommend you trying it. Atleast try the vim-modal editing. Modal
      editing is way of treating text as a editable document.
 
-     <Info.Header>Where to start ?</Info.Header>
+     <Info.Question>Where to start ?</Info.Question>
 
      I would recommend installing vim and just going through{" "}
      <Info.GlobalLinks
@@ -33,7 +33,7 @@ export default function LearnContainer() {
      no wrong way to use vim. It is just meant to make you faster so your
      experience is not bound by anyone.
 
-     <Info.Header>Further Reading</Info.Header>
+     <Info.Question>Further Reading</Info.Question>
 
      Also If you want to check out more about vim see given links
 
